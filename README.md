@@ -11,3 +11,5 @@ Numero minimo di push: 5;
 Bonus
 - Abbellire con CSS o Bootstrap
 - Inserire un bottone che al click faccia il fetch di altre 10 mail (sostituendo le altre)
+
+DONE
