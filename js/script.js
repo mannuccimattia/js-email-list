@@ -1,5 +1,4 @@
 // RECUPERO ELEMENTI DAL DOM
-// ul
 const mailList = document.getElementById("mail-list");
 
 // DEFINIZIONE VARIABILI
@@ -7,25 +6,21 @@ const mailList = document.getElementById("mail-list");
 let mailArray = [];
 // definisco il numero di mail da generare
 const mailNumber = 10;
-// contatore
+// contatore per la stampa in console e il render in pagina
 let counter = 0;
 
-
-
+// CORPO DEL PROGRAMMA
+// ciclo n volte la chiamata AJAX per n=mailNumber
 for (let i = 0; i < mailNumber; i++) {
   axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then(res => {
+    // creo una stringa dentro l'array per ogni chiamata
     mailArray[i] = res.data.response;
+    // aumento il contatore
     counter++;
-
+    // quando il contatore arriva a mailNumber 
     if (counter === mailNumber) {
       console.log("mailArray è", mailArray);
-
-      // for(let j=0; j<mailNumber; j++){
-      //   const listItem = document.createElement("li");
-      //   const itemContent = document.createTextNode(mailArray[j]);
-      //   listItem.appendChild(itemContent);
-      //   mailList.appendChild(listItem);
-      // }
+      // creo un li per ogni stringa dell'array ottenuto contenente la stringa stessa e lo appendo a mailList
       mailArray.forEach(mail => {
         const listItem = document.createElement("li");
         listItem.textContent = mail;
@@ -33,31 +28,4 @@ for (let i = 0; i < mailNumber; i++) {
       });
     }
   });
-}
-
-
-
-
-// SOLUZIONE PROMISE.ALL
-// let promises = [];
-
-// for(let i = 0; i < mailNumber; i++){
-//   promises.push(axios.get("https://flynn.boolean.careers/exercises/api/random/mail"));
-// }
-// console.log(promises)
-// Promise.all(promises)
-//   .then(responses => {
-//     responses.forEach(response => {
-//       mailArray.push(response.data.response);
-//     });
-//     console.log("mailArray è", mailArray);
-
-//     mailArray.forEach(email => {
-//       const listItem = document.createElement("li");
-//       listItem.textContent = email;
-//       mailList.appendChild(listItem);
-//     });
-//   })
-//   .catch(error => {
-//     console.error("Errore nel recupero delle mail:", error);
-//   });
+};
