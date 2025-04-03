@@ -4,28 +4,32 @@ const mailList = document.getElementById("mail-list");
 
 // DEFINIZIONE VARIABILI
 // creo un array vuoto dove inserire le email generate
-const mailArray = [];
+let mailArray = [];
 // definisco il numero di mail da generare
 const mailNumber = 10;
 
-// FUNZIONI
-// funzione per ciclare la chiamata ajax per n volte e assegnare le risposte ottenute come elementi di un array
-let genMailArray = () =>{
-  for(let i=0; i<mailNumber; i++){
-    axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then(res => {
-      if(i < mailNumber - 1){
-        mailArray.push(res.data.response);
+
+for (let i = 0; i < mailNumber; i++) {
+  axios.get("https://flynn.boolean.careers/exercises/api/random/mail").then(res => {
+    if (i < mailNumber - 1) {
+      mailArray.push(res.data.response);
+    }
+    else if (i == mailNumber - 1) {
+      mailArray.push(res.data.response);
+      console.log("mailArray è", mailArray);
+
+      for(let j=0; j<mailNumber; j++){
+        const listItem = document.createElement("li");
+        const itemContent = document.createTextNode(mailArray[j]);
+        listItem.appendChild(itemContent);
+        mailList.appendChild(listItem);
       }
-      else if(i == mailNumber - 1){
-        mailArray.push(res.data.response);
-        console.log("L'array ottenuto da genMailList è",mailArray);
-      }
-    })
-  }
-  return mailArray;
+      // const listItemsArray = mailArray.map(mail => `<li>${mail}</li>`);
+      // console.log("listItemsArray è", listItemsArray);
+
+      // for(let j=0; j<mailNumber; j++){
+      //   mailList.innerText = listItemsArray[j];
+      // }
+    }
+  });
 }
-
-// CORPO DEL PROGRAMMA    
-// chiamo genMailArray
-genMailArray();
-
