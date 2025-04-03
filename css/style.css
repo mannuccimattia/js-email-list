@@ -32,4 +32,10 @@ ul li::before{
   padding-right: 5px;
 }
 
+#btn{
+  position: absolute;
+  top: 80vh;
+  left: 50%;
+  translate: -50% 0;
+}
 
