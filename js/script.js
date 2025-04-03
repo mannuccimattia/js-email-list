@@ -26,6 +26,7 @@ for (let i = 0; i < mailNumber; i++) {
         listItem.textContent = mail;
         mailList.appendChild(listItem);      
       });
+      mailList.style.backgroundImage = "url(../img/rows.jpg)"
     }
   });
 };

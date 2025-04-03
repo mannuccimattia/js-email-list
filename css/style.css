@@ -1,0 +1,35 @@
+.container{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.container>#title>h1{
+  border: 1px solid wheat;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: wheat;
+  font-family: 'Lucida Sans', sans-serif;
+}
+
+#list{
+  background-color: wheat;
+  border-radius: 20px;
+  padding: 20px 0;
+  margin: 40px 0;
+}
+
+ul{
+  width: 60%;
+  margin: 0 auto;
+  background-size: 134%;
+  line-height: 2;
+  font-size: 20px;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+
+ul li::before{
+  content: "\2709";
+  padding-right: 5px;
+}
+
+
