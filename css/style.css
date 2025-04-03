@@ -39,3 +39,12 @@ ul li::before{
   translate: -50% 0;
 }
 
+#btn:hover{
+  background-color: transparent;
+  border: 2px solid #FFCA2C;
+  color: #FFCA2C;
+}
+
+#btn:active{
+  background-color: #FFCA2C;
+}
