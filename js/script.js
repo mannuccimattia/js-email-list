@@ -20,13 +20,17 @@ for (let i = 0; i < mailNumber; i++) {
     if (counter === mailNumber) {
       console.log("mailArray è", mailArray);
 
-      for(let j=0; j<mailNumber; j++){
+      // for(let j=0; j<mailNumber; j++){
+      //   const listItem = document.createElement("li");
+      //   const itemContent = document.createTextNode(mailArray[j]);
+      //   listItem.appendChild(itemContent);
+      //   mailList.appendChild(listItem);
+      // }
+      mailArray.forEach(mail => {
         const listItem = document.createElement("li");
-        const itemContent = document.createTextNode(mailArray[j]);
-        listItem.appendChild(itemContent);
-        mailList.appendChild(listItem);
-      }
-     
+        listItem.textContent = mail;
+        mailList.appendChild(listItem);      
+      });
     }
   });
 }
