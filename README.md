@@ -13,3 +13,5 @@ Bonus
 - Inserire un bottone che al click faccia il fetch di altre 10 mail (sostituendo le altre)
 
 DONE
+
+BONUS DONE
