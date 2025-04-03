@@ -1,12 +1,6 @@
-.container{
-  width: 50%;
-  margin: 0 auto;
-}
-
-.container>#title>h1{
+#title{
   border: 1px solid wheat;
   border-radius: 20px;
-  padding: 10px 20px;
   color: wheat;
   font-family: 'Lucida Sans', sans-serif;
 }
@@ -14,30 +8,16 @@
 #list{
   background-color: wheat;
   border-radius: 20px;
-  padding: 20px 0;
-  margin: 40px 0;
 }
 
 ul{
-  width: 60%;
-  margin: 0 auto;
-  background-size: 134%;
-  line-height: 2;
-  font-size: 20px;
   font-family: 'Trebuchet MS', sans-serif;
 }
 
 ul li::before{
   content: "\2709";
-  padding-right: 5px;
 }
 
-#btn{
-  position: absolute;
-  top: 80vh;
-  left: 50%;
-  translate: -50% 0;
-}
 
 #btn:hover{
   background-color: transparent;
@@ -47,4 +27,10 @@ ul li::before{
 
 #btn:active{
   background-color: #FFCA2C;
+}
+
+@media screen and (max-width: 766px) {
+  ul li::before{
+    display: none;
+  }
 }
